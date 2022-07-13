@@ -1,30 +1,46 @@
-// const message = 'JavaScript is awesome!';
-// alert(message);
+// let balance = 10000;
+// const payment = 2000;
 
-// const isComing = confirm('Please confirm hotel reservation');
-// console.log(isComing);
+// console.log(
+//   'Общая стоимость заказа 2000 кредитов. Проверяем доступное количество кредитов на счету.'
+// );
 
-// const hotelName = prompt('Please enter desired hotel name');
-// console.log(hotelName);
+// if (balance >= payment) {
+//   balance -= payment;
+//   // balance = balance - payment;
 
-// let value = 5;
+//   console.log(`На счету осталось ${balance} кредитов`);
+// } else {
+//   console.log('На счету не достаточно средств для проведения операции');
+// }
+// console.log('Операция завершена.');
 
-// // Аналогічно запису value = value + 10;
-// value += 10;
-// console.log(value); // 15
+// ------------------------------------------------------------//
 
-// const x = 5;
-// const y = 10;
-// const z = 5;
-// console.log(x, y, z);
+// let totalSpent = 2000;
+// let payment = 500;
+// let discount = 0;
 
-// console.log('x > y:', x > y); // false
-// console.log('x < y:', x < y); // true
-// console.log('x < z:', x < z); // false
-// console.log('x <= z:', x <= z); // true
-// console.log('x === y:', x === y); // false
-// console.log('x === z:', x === z); // true
-// console.log('x !== y:', x !== y); // true
-// console.log('x !== z:', x !== z); // false
+// if (totalSpent >= 100 && totalSpent < 1000) {
+//   console.log('Бронзовий партнер, знижка 2%');
+//   discount = 0.02;
+// } else if (totalSpent > 1000 && totalSpent < 5000) {
+//   console.log('Срібний партнер, знижка 5%');
+//   discount = 0.05;
+// } else if (totalSpent >= 5000) {
+//   console.log('Золотий партнер, знижка 10%');
+//   discount = 0.1;
+// } else {
+//   console.log('Не є нашим партнером, знижка 0%');
+// }
 
-console.log(Math.random());
+// payment -= payment * discount;
+// // payment - payment - payment * discount;
+
+// console.log(`Оформлено замовлення на суму ${payment} кредитів зі знижкою ${discount * 100} %`);
+
+// totalSpent += payment;
+
+// console.log(`Загальна сума витрачених клштів у магазині ${totalSpent}`);
+
+//-------------------------------------------------------------//
