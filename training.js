@@ -44,3 +44,61 @@
 // console.log(`Загальна сума витрачених клштів у магазині ${totalSpent}`);
 
 //-------------------------------------------------------------//
+
+// const max = 10;
+// for (let i = 0; i < max; i += 1) {
+//   console.log(`${max} % ${i} = `, max % i);
+// }
+
+// const number = 10;
+
+// for (let i = 0; i < number; i += 1) {
+//   if (i % 2 === 0) {
+//     continue;
+//   }
+
+//   console.log('Непарне i: ', i); // 1, 3, 5, 7, 9
+// }
+
+// function calculateEngravingPrice(message, pricePerWord) {
+//   // Change code below this line
+
+//   const price = message * pricePerWord;
+
+//   return price;
+// }
+// calculateEngravingPrice(10, 10);
+
+// const message = 'JavaScript is in my blood';
+// console.log(message);
+
+// const lengthWord = message.length;
+// console.log('Leng or word: ', lengthWord);
+
+// const pricePerWord = 10;
+// console.log('Price: ', pricePerWord);
+
+// const total = lengthWord * pricePerWord;
+// console.log(total);
+
+// const apartment = {
+//   imgUrl: 'https://via.placeholder.com/640x480',
+//   descr: 'Spacious apartment in the city center',
+//   rating: 4,
+//   price: 2153,
+//   tags: ['premium', 'promoted', 'top'],
+//   owner: {
+//     name: 'Henry',
+//     phone: '982-126-1588',
+//     email: 'henry.carter@aptmail.com',
+//   },
+// };
+
+// // Change code below this line
+// const ownerName = apartment.owner.name;
+// const ownerPhone = apartment.owner.phone;
+// const ownerEmail = apartment.owner.email;
+// const numberOfTags = apartment.tags.length;
+// const firstTag = apartment.tags[0];
+// const lastTag = apartment.tags[apartment.tags.length - 1];
+// console.log(lastTag);
