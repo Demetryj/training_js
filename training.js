@@ -102,3 +102,5 @@
 // const firstTag = apartment.tags[0];
 // const lastTag = apartment.tags[apartment.tags.length - 1];
 // console.log(lastTag);
+
+// Change code below this line

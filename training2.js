@@ -287,22 +287,48 @@
 //
 // P.S. Код також має бути легко модифікований для будь-яких інших інтервалів.
 
-const min = 2;
-const max = 10;
+// const min = 2;
+// const max = 10;
 
-for (let i = min; i < max; i += 1) {
-  if (i / i === 1 && i / 1 === i) {
-    console.log(i);
-  }
-}
+// for (let i = min; i < max; i += 1) {
+//   for (let j = min; i < max; i += 1) {
+//     if (i / j === 1 || i % j !== 0) {
+//       console.log(i);
+//     }
+//   }
+// }
 
 // ---------------------------------------------------------------
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 
 // Напишіть програму, яка отримає від користувача
 //число (кількість хвилин) і виведе до консолі
 //Рядок у форматі годин і хвилин
-// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 // 70 === 01:10
+
+// const userMessage = prompt('Введіть число (хв.):');
+// let consoleMinutes;
+// let consoleHours;
+
+// if (userMessage > 60) {
+//   const hours = Math.round(userMessage / 60);
+
+//   if (hours < 10) {
+//     consoleHours = '0' + hours;
+//   } else {
+//     consoleHours = hours;
+//   }
+
+//   const minutes = userMessage % 60;
+
+//   if (minutes < 10) {
+//     consoleMinutes = '0' + minutes;
+//   } else {
+//     consoleMinutes = minutes;
+//   }
+
+//   console.log(`${consoleHours}:${consoleMinutes}`);
+// }
 
 // ---------------------------------------------------------------
 // 2. Використовуючи конструкцію if..else, напишіть код, який отримує число через prompt, а потім виводить в alert:
@@ -310,3 +336,15 @@ for (let i = min; i < max; i += 1) {
 // -1, якщо значення менше нуля,
 // 0, якщо значення дорівнює нулю.
 // Передбачається, що користувач вводить лише цифри.
+
+// const userNumber = prompt('Введіть число');
+
+// if (userNumber <= 0) {
+//   if (userNumber < 0) {
+//     alert('-1');
+//   } else {
+//     alert('0');
+//   }
+// } else {
+//   alert('1');
+// }
