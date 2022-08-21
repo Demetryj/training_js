@@ -348,3 +348,198 @@
 // } else {
 //   alert('1');
 // }
+
+//-------------------------------------------------------------------------------------------------------------------------------
+// ЗАНЯТТЯ 2 21.08.2022
+
+// Потрібно написати функцію, яка приймає 1 параметр key, яка буде перебирати об'єкт
+// якщо об'єкт має такий ключ - поверне true
+
+// const obj = {
+//   name: 'Jhon',
+//   car: 'Audi',
+//   carColor: 'White',
+// };
+
+// const findKey = key => {
+//   //   return Object.keys(obj).includes(key);
+
+//   return key in obj; // другий варіант
+// };
+
+// console.log(findKey('name'));
+
+// --------------------------------------------------------------------------------
+// Створіть функцію multiplyNumeric(obj),
+//   яка множить всі числові властивості об'єкта obj на 2.
+
+// до  виклику функції
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: 'My menu',
+// };
+// //
+// // multiplyNumeric(menu);
+
+// // після виклику функції
+// // menu = {
+// //   width: 400,
+// //   height: 600,
+// //   title: "My menu"
+
+// const multiplyNumeric = obj => {
+//   for (const key in obj) {
+//     if (typeof obj[key] === 'number') {
+//       obj[key] *= 2;
+//     }
+//   }
+//   return menu;
+// };
+
+// console.log(multiplyNumeric(menu));
+
+//------------------------------------------------------------------------------
+//У нас є об'єкт, в якому зберігаються зарплати
+//нашої команди
+//Напишіть код для обчислення суми всіх зарплат і
+//збережіть його результат у змінній sum.
+//Якщо об'єкт salaries порожній, то результат має бути 0
+
+// const salaries = {
+//   Mango: 100,
+//   Poly: 160,
+//   Ajax: 1470,
+// };
+
+// // // const sumSalary = obj => {
+// // //   let totalSalary = 0;
+// // //   const arrayOfSalaries = Object.values(obj);
+
+// // //   for (const salary of arrayOfSalaries) {
+// // //     totalSalary += salary;
+// // //   }
+// // //   return totalSalary;
+// // // };
+
+// // // 2-й метод
+
+// const sumSalary = obj => {
+//   return Object.values(obj).reduce((a, b) => a + b, 0);
+// };
+
+// console.log(sumSalary(salaries));
+
+// -------------------------------------------------------------------------------
+
+// Напишіть код JS, щоб видалити всі елементи в заданому масиві
+// Функція `deleteElement()` видаляє всі входження елемента з заданого масиву.
+// let arrFirst = [23, 56, 4, 78, 5, 63, 45, 210, 56];
+
+// // const deleteElement = (arrFirst, number) => {
+// //   for (let i = 0; i < arrFirst.length; i += 1) {
+// //     if (arrFirst[i] === number) {
+// //       arrFirst.splice(i, 1);
+// //     }
+// //   }
+// //   return arrFirst;
+// // };
+
+// // 2-й метод
+// const deleteElement = (arrFirst, number) => {
+//   arrFirst.forEach((element, index, array) => {
+//     if (element === number) {
+//       arrFirst.splice(index, 1);
+//     }
+//   });
+//   return arrFirst;
+// };
+
+// arrFirst = deleteElement(arrFirst, 56);
+
+// console.log(arrFirst); //[23, 4, 78, 5, 63, 45, 210]
+
+//-------------------------------------------------------------------
+// Напишіть метод, який розбиває масив на частини визначеного розміру
+
+// const data = [1, 2, 3, 4, 5, 6, 7];
+// // console.log(chunk(data, 2)) // [[1, 2], [3, 4], [5, 6], [7]]
+// // console.log(chunk(data, 3)) // [[1, 2, 3], [4, 5, 6], [7]]
+
+// const cutArray = (array, number) => {
+
+//   let i = 0;
+//   const newArr = [];
+
+//   while (i < array.length) {
+
+//     newArr.push(array.slice(i, i + number));
+//     i += number;
+
+//   }
+//   return newArr;
+// };
+
+// console.log(cutArray(data, 3));
+
+//------------------------------------------------------------------
+// Напишіть функцію sumInput(), яка:
+//
+// Просить користувача ввести значення, використовуючи prompt та зберігає їх у масив.
+//   Закінчує запитувати значення, коли користувач введе не числове значення,
+// порожній рядок або натисне «Скасувати».
+// Підраховує та повертає суму елементів масиву.
+//   P.S. Нуль 0 – вважається числом, не зупиняйте введення значень
+// під час введення «0».
+
+// function someInput() {
+//   const numberPrompt = [];
+
+//   while (true) {
+//     let message = Number(prompt('Введіть число'));
+//     if (Number(message) || Number(message) === 0) {
+//       numberPrompt.push(Number(message));
+//     } else {
+//       break;
+//     }
+//   }
+//   return numberPrompt.reduce((sum, number) => sum + number, 0);
+// }
+
+// console.log(someInput());
+
+//--------------------------------------------------------------------------
+
+//Напишіть функцію calcTotalPrice(stones, stonesName),
+//яка приймає масив об'єктів і
+//рядок з назвою каменю.
+//Функція повертає загальну вартість каміння
+//з таким ім'ям
+
+// function calcTotalPrice(array, stonesName) {
+//   //   for (const element of array) {
+//   //     if (element.name === stonesName) {
+//   //       return element.price * element.quantity;
+//   //     }
+//   //   }
+
+//   //   2-й метод
+
+//    let costStone = 0;
+
+//   stones.forEach(({ name, price, quantity }) => {
+//     if (name === stonesName) {
+//       costStone = price * quantity;
+//     }
+//   });
+//   return costStone;
+// }
+
+// const stones = [
+//   { name: 'Emerald', price: 1300, quantity: 4 },
+//   { name: 'Diamond', price: 2700, quantity: 6 },
+//   { name: 'Sapphire', price: 400, quantity: 7 },
+//   { name: 'Rubble', price: 150, quantity: 100 },
+// ];
+
+// console.log(calcTotalPrice(stones, 'Sapphire'));
