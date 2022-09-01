@@ -114,3 +114,5 @@
 // console.log(dog); // { name: 'Манго', __proto__: animal }
 // console.log(animal.isPrototypeOf(dog));
 
+const categories = document.querySelectorAll('.item > ul');
+console.log(categories);
