@@ -543,3 +543,282 @@
 // ];
 
 // console.log(calcTotalPrice(stones, 'Sapphire'));
+
+//--------------------------------------------------------04.09.2022 Контекст this, методи функцій.---------------------------------------
+
+// Напишіть дві функції
+// letMeSeeYourName(callback) - запитує ім'я користувача
+//через prompt і викликає функцію зворотного виклику
+//greet(name) - колбек, який приймає ім'я і виводить в консоль
+//рядок "Привіт <name>"
+//Реалізуй перевірку, чи name не пустий рядок
+
+// function greet(name) {
+//   console.log(name);
+// }
+
+// function letMeSeeYourName(callback) {
+//   const userName = prompt("Введіть ім'я");
+//   callback(userName);
+// }
+
+// letMeSeeYourName(greet);
+////////////////////////////---------------------------------
+
+// Переведіть текст вигляду border-left-width до borderLeftWidth
+// Напишіть функцію camelize(str), яка перетворює рядки «my-short-string» на «myShortString».
+//
+// Тобто дефіси віддаляються, а всі слова після них отримують велику букву.
+//
+// camelize('background-color', changeString);
+// // camelize('list-style-image') == 'listStyleImage';
+// // camelize('-webkit-transition') == 'WebkitTransition';
+
+// function changeString(element, index) {
+//   if (index !== 0) {
+//     return element[0].toUpperCase() + element.slice(1);
+//   } else {
+//     return element;
+//   }
+// }
+
+// console.log(camelize('background-color', changeString));
+
+// function camelize(string, callback) {
+//   return string.split('-').map(callback).join('');
+
+//   //     if (index !== 0) {
+//   //       return element[0].toUpperCase() + element.slice(1);
+//   //     } else {
+//   //       return element;
+//   //     };
+//   //   const arrayFromString = string.split('-');
+//   //   //   console.log(string.split('-'));
+//   //   const newArrey = arrayFromString.map((element, index) => {
+//   //     if (index !== 0) {
+//   //       return element[0].toUpperCase() + element.slice(1);
+//   //     } else {
+//   //       return element;
+//   //     }
+//   //   });
+//   //   return newArrey.join('');
+//   //   console.log(newArrey.join(''));
+// }
+
+////////////////////////--------------------------------------
+// Напишіть дві функції
+//makeProduct(назва, ціна, callback) - приймає
+//імя і ціну товару, а також функцію callback.
+//Функція створює об'єкт товару, додає йому унікальний
+//ідентифікатор у властивості id і викликає зворотний виклик
+//передаючи йому створений об’єкт.
+//showProduct(product) - callback приймає об'єкт
+//продукта і виводить його в консоль
+
+// function makeProduct(name, price, callback) {
+//   const product = {
+//     id: Date.now(),
+//     name,
+//     price,
+//   };
+
+//   callback(product);
+// }
+
+// function showProduct(product) {
+//   console.log(product);
+// }
+
+// makeProduct('laptop', 30000, showProduct);
+
+////////--------------------------------------------------------
+//-----------------------------ЗАМИКАННЯ//
+// Виконай рефакторинг makeDish так, щоб не потрібно було
+// щоразу передавати ім'я шефа.
+// Напишіть функцію makeShef(shefName), яка повертає функцію
+// makeDish(dish), що пам'ятає ім'я шефа при її виклику
+
+// const makeDish = function (shefName, dish) {
+//   console.log(`${shefName} is cooking ${dish}`);
+// };
+
+// makeDish("Mango", "apple pie");
+// makeDish("Poly", "muffins");
+
+// const makeShef = function (shefName) {
+//   return function makeDish(dish) {
+//     console.log(`${shefName} is cooking ${dish}`);
+//   };
+// };
+// const mango = makeShef('Mango');
+// console.log(mango);
+// mango('apple pie');
+
+// const polly = makeShef('Polly');
+// console.log(polly);
+// polly('muffins');
+
+///--------------------------------------------------------------
+
+// Напишіть функцію makeCounter, яка повертає іншу
+//функцію, яка рахує та виводить в консоль кількість своїх викликів
+
+// function makeCounter(position) {
+//   let counter = 0;
+//   return function () {
+//     counter += 1;
+//     console.log(`counter1 ${position}`, counter);
+//   };
+// }
+
+// const counter1 = makeCounter(1);
+// counter1();
+// counter1();
+// counter1();
+
+// const counter2 = makeCounter(2);
+// counter2();
+// counter1();
+// counter1();
+
+/////---------------------------------------------------------
+//Напишіть функцію savePassword(password), яка приймає
+//пароль і повертає внутрішню функцію, що приймає
+//рядок і повертає true, якщо рядок збігається із збереженим
+//паролем і false - якщо не збігається
+
+// function savePassword(password) {
+//   return function (string) {
+//     return password === string;
+//   };
+// }
+
+// const chackPassword = savePassword('parol');
+// console.log(chackPassword);
+// console.log(chackPassword('123'));
+////////////////---------------------------
+
+// Виправте помилки, щоб код працював
+// const product = {
+//   price: 5000,
+//   showPrice() {
+//     console.log(price);
+//   },
+// };
+// product.showPrice();
+
+// const product = {
+//   price: 5000,
+//   showPrice() {
+//     console.log(this.price);
+//   },
+// };
+// product.showPrice();
+
+//------------------------------------
+// Виправте помилки, щоб код працював
+//
+// const product = {
+//   price: 5000,
+//   showPrice() {
+//     console.log(this.price);
+//   },
+// };
+
+// function callAction(action) {
+//   action();
+// }
+
+// callAction(product.showPrice.bind(product));
+///////-----------------------------
+
+// Напишіть функцію each(array, callback), яка
+// першим параметром приймає масив, а другим - функцію,
+// яка застосовується до кожного елемента масиву.
+// Функція each повинна повернути новий масив, елементами
+// якого будуть результати виклику callback
+// callback функції повинна множити елементи на 2
+
+// function each(array, callback) {
+//   const newArray = [];
+
+//   array.forEach(element => {
+//     newArray.push(callback(element));
+//   });
+//   return newArray;
+// }
+
+// // function increase(element) {
+// //   return element * 2;
+// // }
+
+// // console.log(each([1, 2, 3], increase));
+
+// console.log(each([1, 2, 3], element => element * 2));
+
+//////////----------------------------------------------------
+//Створіть об'єкт calculator із такими методами
+//read(a, b) - приймає два аргументи та зберігає їх
+//як властивості об'єкта
+//sum() повертає суму збережених значень
+//min() повертає різницю збережених значень
+//mult() перемножує збережені значення та повертає результат
+//div() перемножує збережені значення та повертає результат і враховується ділення на 0
+
+// const calculator = {
+//   read(a, b) {
+//     this.a = a;
+//     this.b = b;
+//   },
+//   sum() {
+//     return this.a + this.b;
+//   },
+//   min() {
+//     return this.a - this.b;
+//   },
+//   mult() {
+//     return this.a * this.b;
+//   },
+//   div() {
+//     return this.a / this.b;
+//   },
+// };
+
+// console.log(calculator.read);
+// calculator.read(0, 5);
+// console.log(calculator.sum());
+// console.log(calculator.min());
+// console.log(calculator.mult());
+// console.log(calculator.div());
+
+// const obj = {
+//   a: 5,
+//   b: 7,
+// };
+
+// obj.sum = calculator.sum;
+
+// console.log(obj.sum());
+
+///----------------------------------------------------------------------------
+
+// Підрахувати кількість голосних у рядку
+// Функція `countVowel()` повертає кількість голосних у вхідному рядку.
+// const letterVowel = ['A', 'E', 'I', 'O', 'U', 'Y'];
+
+// function countVowel(str) {
+//   const newArray = str.toUpperCase().split('');
+//   console.log(newArray);
+
+//   const quantity = newArray.reduce((acc, element) => {
+//     if (letterVowel.includes(element)) {
+//       acc += 1;
+//     }
+//     return acc;
+//   }, 0);
+
+//   return quantity;
+// }
+
+// console.log(countVowel('Hello')); //2
+// console.log(countVowel('Umbrella')); //3
