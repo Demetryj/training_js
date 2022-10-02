@@ -1075,27 +1075,402 @@
 //слово довжиною 4 літери або більше.
 //   У реченні не буде розділових знаків. g2d l2k e6e
 
-const input = 'Every developer likes to mix kubernetes and javascript';
-// Result
-// 'E3y d7r l3s to mix k8s and j8t'
+// const input = 'Every developer likes to mix kubernetes and javascript';
+// // Result
+// // 'E3y d7r l3s to mix k8s and j8t'
 
-function cutWords(string) {
-  return string
-    .split(' ')
-    .map(item => {
-      const { length } = item;
-      // if (item.length <= 4) {
-      //   return item;
-      // } else {
-      //   return `${item[0]}${item.length - 2}${item[item.length - 1]}`;
-      // }
-      if (length <= 4) {
-        return item;
-      } else {
-        return `${item[0]}${length - 2}${item[length - 1]}`;
-      }
-    })
-    .join(' ');
+// function cutWords(string) {
+//   return string
+//     .split(' ')
+//     .map(item => {
+//       const { length } = item;
+//       // if (item.length <= 4) {
+//       //   return item;
+//       // } else {
+//       //   return `${item[0]}${item.length - 2}${item[item.length - 1]}`;
+//       // }
+//       if (length <= 4) {
+//         return item;
+//       } else {
+//         return `${item[0]}${length - 2}${item[length - 1]}`;
+//       }
+//     })
+//     .join(' ');
+// }
+
+// console.log(cutWords(input));
+
+//------------------------------------------------02.09.2022---------------------------------------------//
+// Змініть стиль тексту абзацу за допомогою коду JavaScript
+//
+// <!DOCTYPE html>
+// <html>
+// <head>
+// <meta charset=utf-8 />
+//   <title>JS DOM paragraph style</title>
+// </head>
+// <body>
+// <p id ='text'>JavaScript Exercises</p>
+// <div>
+//   <button id="jsstyle">Style</button>
+// </div>
+// </body>
+// </html>
+//
+// При натисканні на кнопку буде змінено шрифт, розмір шрифту та
+//колір тексту абзацу.
+// При наступному натисканні кнопки буде змінюватись колір параграфу.
+//Після кожного кліку буде пісдтавлятись колір із масиву colors послідовно
+
+// const colors = ['gold', 'green', 'yellow', 'blue', 'black', 'brown'];
+// const textEl = document.querySelector('#text');
+// const btnEl = document.querySelector('#js-style');
+
+// btnEl.addEventListener('click', onBtnElClick);
+
+// let count = 0;
+
+// function onBtnElClick() {
+//   textEl.style.fontFamili = 'Montserat';
+//   textEl.style.fontSize = '30px';
+//   textEl.style.color = changeColorText();
+//   count += 1;
+//   if (count === colors.length) {
+//     count = 0;
+//   }
+
+//   // textEl.style.cssText = "font-famili: 'Montserat; font-size: '30px'";
+// }
+
+// function changeColorText() {
+//   return colors[count];
+//   // return colors[count += 1];
+// }
+
+///////////////////////////////////////////////////////////////////////////
+
+// Коли натискаємо клавіші вверх, вниз, вліво, вправо - квадрат має змінювати свою позицію
+
+/* <div
+  id="driveBox"
+  style="position: absolute; left: 0; right: 0; top: 0;
+        bottom: 0; background: gold; width: 50px; height: 50px"
+  className="box"
+
+></div>; */
+
+//потрібно взяти поточну ширину (поточна ширина вікна) екрана для дого, щоб поставити стоп.
+
+// const boxEl = document.querySelector('#driveBox');
+
+// document.addEventListener('keydown', changePositionBox);
+
+// function changePositionBox(event) {
+//   if (event.code === 'ArrowDown') {
+//     // console.log(boxEl.style.top);
+//     const down = parseInt(boxEl.style.top); // parseInt візьме тільки 0 без px
+//     boxEl.style.top = `${down + 10}px`;
+
+//   } else if (event.code === 'ArrowRight') {
+//     const right = parseInt(boxEl.style.left); // parseInt візьме тільки 0 без px
+//     boxEl.style.left = `${right + 10}px`;
+//   } else if (event.code === 'ArrowUp') {
+//     const top = parseInt(boxEl.style.top); // parseInt візьме тільки 0 без px
+//     boxEl.style.top = `${top - 10}px`;
+//   } else if (event.code === 'ArrowLeft') {
+//     const left = parseInt(boxEl.style.left); // parseInt візьме тільки 0 без px
+//     boxEl.style.left = `${left - 10}px`;
+//   }
+// }
+
+//////////////////////////////////////////////////////
+
+// Напишіть програму JavaScript для добавлення та видалення елементів зі спадного списку.
+
+// <!DOCTYPE html>
+// <html><head>
+// <meta charset=utf-8 />
+//   <title>Remove items from a dropdown list</title>
+// </head><body><form>
+//   <select id="colorSelect">
+//     <option>Red</option>
+//     <option>Green</option>
+//     <option>White</option>
+//     <option>Black</option>
+//   </select>
+//   <input type="button" value="Select and Remove">
+// </form>
+
+// const formEl = document.querySelector('form');
+// const selectEl = document.querySelector('#colorSelect');
+// const btnEl = document.querySelector('input');
+// console.log(btnEl);
+
+// btnEl.addEventListener('click', removeAndAddElementInList);
+
+// function removeAndAddElementInList(event) {
+//   console.log(selectEl);
+
+//   selectEl.selectedOptions[0].remove();
+//   selectEl.insertAdjacentHTML('beforeend', '<option>Blue</option>');
+// }
+
+////////////////////////////////////////////
+// Напишіть програму на JavaScript, щоб отримати ширину та висоту вікна (щоразу, коли розмір вікна змінюється).
+// Вивдіть ці значення на сторінку
+
+// <!DOCTYPE html>
+// <html>
+// <head>
+// <meta charset=utf-8 />
+//   <title>Window Size : height and width</title>
+// </head>
+// <!-- Resize the window (here output panel) and see the result !-->
+// <body onload="getSize()" onresize="getSize()">
+// <div id="wh">
+//   <!-- Place height and width size here! -->
+// </div>
+// <body>
+// </body>
+// </html>
+
+// const divEl = document.querySelector('#wh');
+// // console.log(window);
+// // console.dir(document);
+// // const widthDoc = document.documentElement.clientWidth;
+// // const heightDoc = document.documentElement.clientHeight;
+// // console.log(widthDoc);
+// // console.log(heightDoc);
+
+// // const widthWindow = window.innerWidth;
+// // const heightWindow = window.innerHeight;
+
+// window.addEventListener('resize', changeSizeWindow);
+
+// function changeSizeWindow() {
+//   const widthWindow = window.innerWidth;
+//   const heightWindow = window.innerHeight;
+
+//   console.log('width:', widthWindow);
+//   console.log('height:', heightWindow);
+
+//   divEl.textContent = `width: ${widthWindow}, height: ${heightWindow} `;
+
+//   const position = divEl.getBoundingClientRect(); //повертає координати елемента
+//   console.log(position);
+// }
+
+//////////////////////////////////////////////////////////////////////
+
+// Напишіть програму JavaScript, щоб виділяти жирні слова (<strong>) наступного абзацу, наводячи курсор миші на посилання
+
+// <head>
+//   <meta charSet="UTF-8">
+//     <title>Get And Style All Tags</title>
+// </head>
+// <body>
+// <p>[<a href="#" class="link" onMouseOver="highlight()" onMouseOut="return_normal()">On mouse over here bold words of the following
+//   paragraph will be highlighted</a>]</p>
+// <p class="text"><strong>We</strong> have just started <strong>this</strong> section for the users (<strong>beginner</strong> to
+//   intermediate) who <strong>want</strong> to work with <strong>various</strong> JavaScript <strong>problems</strong> and
+//   write scripts online to <strong>test</strong> their JavaScript <strong>skill</strong>.</p>
+// </body>
+
+// const linkEl = document.querySelector('.link');
+// const textEl = document.querySelector('.text');
+
+// linkEl.addEventListener('mouseover', onMouseOver);
+// linkEl.addEventListener('mouseout', onMouseOut);
+
+// function onMouseOver() {
+//   console.log('mouseover');
+//   changeStrongColor('red');
+// }
+
+// function onMouseOut() {
+//   console.log('mouseout');
+//   changeStrongColor('black');
+// }
+
+// function changeStrongColor(color) {
+//   const strongList = document.querySelectorAll('strong');
+//   strongList.forEach(elem => {
+//     elem.style.color = color;
+//   });
+// }
+
+////////////////////////////////////////////////////////////
+
+// Делегування подій
+// 1. Коли користувач клікає на будь-яку комірку із таблиці, потрібно її зробити активною - добавити клас .active
+// 3. В кожному рядку кожній третій комірці задавати клас .active-third
+// 2. Коли користувач клікає на іншу комірку, вона робиться активною, а всі інші стають неактивними
+// 3. Після перезавантаження сторінки активна комірка зберігається
+
+/* <style>
+  table {
+  margin: 0 auto;
+  border-collapse: collapse;
 }
 
-console.log(cutWords(input));
+  td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+
+  .active {
+  background: #00e871;
+}
+
+
+</style> */
+//
+// <body>
+/* <div className="board">
+  <table>
+    <tbody>
+    <tr style="display: block;">
+      <td className="active"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr style="display: block;">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr style="display: block;">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr style="display: block;">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr style="display: block;">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr style="display: block;">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr style="display: block;">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr style="display: block;">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr style="display: block;">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr style="display: block;">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</div> */
+
+// const tableEl = document.querySelector('table');
+// const actives = document.querySelector('.actives');
+
+// tableEl.addEventListener('click', changeColorBox);
+
+// function changeColorBox(event) {
+//   console.dir(event.target);
+//   if (event.target.tagName === 'TD') {
+//     event.target.style.background = 'blue';
+//   }
+// }
+
+// actives.addEventListener('click', onActivesClick);
+
+// function onActivesClick(event) {
+//   // event.stopPropagation();
+//   event.target.style.background = 'gold';
+// }
