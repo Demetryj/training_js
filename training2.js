@@ -1171,37 +1171,37 @@ const heightWindow = window.innerHeight;
 console.log(widthWindow);
 console.log(heightWindow);
 
-function changePositionBox(event) {
-  if (event.code === 'ArrowDown') {
-    // console.log(boxEl.style.top);
-    const down = parseInt(boxEl.style.top); // parseInt візьме тільки 0 без px
-    if (down >= heightWindow - 60) {
-      // 60 = 50px (довжина сторони квадрата) - 10px (крок зміщення)
-      return;
-    }
-    boxEl.style.top = `${down + 10}px`;
-    console.log(boxEl.style.top);
-  } else if (event.code === 'ArrowRight') {
-    const right = parseInt(boxEl.style.left); // parseInt візьме тільки 0 без px
-    if (right >= widthWindow - 60) {
-      return;
-    }
-    boxEl.style.left = `${right + 10}px`;
-  } else if (event.code === 'ArrowUp') {
-    const top = parseInt(boxEl.style.top);
-    if (top === 0) {
-      return;
-    }
-    // parseInt візьме тільки 0 без px
-    boxEl.style.top = `${top - 10}px`;
-  } else if (event.code === 'ArrowLeft') {
-    const left = parseInt(boxEl.style.left); // parseInt візьме тільки 0 без px
-    if (left === 0) {
-      return;
-    }
-    boxEl.style.left = `${left - 10}px`;
-  }
-}
+// function changePositionBox(event) {
+//   if (event.code === 'ArrowDown') {
+//     // console.log(boxEl.style.top);
+//     const down = parseInt(boxEl.style.top); // parseInt візьме тільки 0 без px
+//     if (down >= heightWindow - 60) {
+//       // 60 = 50px (довжина сторони квадрата) - 10px (крок зміщення)
+//       return;
+//     }
+//     boxEl.style.top = `${down + 10}px`;
+//     console.log(boxEl.style.top);
+//   } else if (event.code === 'ArrowRight') {
+//     const right = parseInt(boxEl.style.left); // parseInt візьме тільки 0 без px
+//     if (right >= widthWindow - 60) {
+//       return;
+//     }
+//     boxEl.style.left = `${right + 10}px`;
+//   } else if (event.code === 'ArrowUp') {
+//     const top = parseInt(boxEl.style.top);
+//     if (top === 0) {
+//       return;
+//     }
+//     // parseInt візьме тільки 0 без px
+//     boxEl.style.top = `${top - 10}px`;
+//   } else if (event.code === 'ArrowLeft') {
+//     const left = parseInt(boxEl.style.left); // parseInt візьме тільки 0 без px
+//     if (left === 0) {
+//       return;
+//     }
+//     boxEl.style.left = `${left - 10}px`;
+//   }
+// }
 
 //////////////////////////////////////////////////////
 
