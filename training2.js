@@ -1161,15 +1161,15 @@
 
 //потрібно взяти поточну ширину (поточна ширина вікна) екрана для дого, щоб поставити стоп.
 
-const boxEl = document.querySelector('#driveBox');
+// const boxEl = document.querySelector('#driveBox');
 
-document.addEventListener('keydown', changePositionBox);
+// document.addEventListener('keydown', changePositionBox);
 
-const widthWindow = window.innerWidth;
-const heightWindow = window.innerHeight;
+// const widthWindow = window.innerWidth;
+// const heightWindow = window.innerHeight;
 
-console.log(widthWindow);
-console.log(heightWindow);
+// console.log(widthWindow);
+// console.log(heightWindow);
 
 // function changePositionBox(event) {
 //   if (event.code === 'ArrowDown') {
@@ -1494,3 +1494,127 @@ console.log(heightWindow);
 //   // event.stopPropagation();
 //   event.target.style.background = 'gold';
 // }
+
+////----------------------------16.10.2022---------------------------/////////////////////////////
+// Отримати дані з API і вивести їх на сторінку
+// https://agify.io/
+
+// https://dog.ceo/dog-api/documentation/random
+
+// const listEl = document.querySelector('.list');
+
+// function getTetch() {
+//   return fetch(`https://dog.ceo/api/breeds/image/random/3`).then(response => response.json());
+// }
+
+// function createMarkup(data) {
+//   return data
+//     .map((page, index) => {
+//       return `<li>
+//     <img src="${page}" alt="random image${index}" width='150'  />
+//     </li>`;
+//     })
+//     .join('');
+// }
+
+// function renderMarkup() {
+//   getTetch().then(data => (listEl.innerHTML = createMarkup(data.message)));
+// }
+
+// renderMarkup();
+//------------------------------------------------------
+
+// Отримати дані з API і вивести їх на сторінку
+// https://randomuser.me/
+
+// async function fetchUser() {
+//   try {
+//     const response = await fetch('https://randomuser.me/api/');
+//     const userData = await response.json();
+//     console.log(userData);
+//     return userData;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// fetchUser();
+
+//----------------------------------
+// https://reqres.in/
+
+// const URL = 'https://reqres.in/api/users';
+
+// async function fetchData() {
+//   try {
+//     const response = await fetch(`${URL}?page=2`);
+//     const user = await response.json();
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// }
+
+// // fetchData();
+
+// async function createUser() {
+//   try {
+//     const response = await fetch(URL, {
+//       method: 'POST',
+//       body: JSON.stringify({
+//         name: 'morpheus',
+//         job: 'leader',
+//       }),
+//     });
+//     const user = await response.json();
+//     console.log(user);
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// }
+
+// // createUser();
+
+// async function updataUser() {
+//   try {
+//     const response = await fetch(`${URL}/2`, {
+//       method: 'PUT',
+//       body: JSON.stringify({
+//         name: 'Poly',
+//         job: 'developer',
+//       }),
+//     });
+//     const user = await response.json();
+//     console.log(user);
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// }
+
+// // updataUser();
+
+// async function deleteUser() {
+//   try {
+//     const response = await fetch(`${URL}/2`, {
+//       method: 'DELETE',
+//     });
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// }
+
+// deleteUser();
+
+//ПОГОДА
+// ДЗ
+// Отримати дані з API і вивести їх на сторінку. Добавити стилі.
+// https://openweathermap.org/api
+
+// https://nordicapis.com/how-to-build-an-api-driven-weather-app/
+
+// Отримати дані з API та вивести їх на сторінку
+// https://api.publicapis.org/entries
+// https://rapidapi.com/hub
+
+// fetch(' https://api.publicapis.org/entries')
+//   .then(response => response.json())
+//   .then(data => console.log(data.entries.filter(elem => !elem.Auth)));
