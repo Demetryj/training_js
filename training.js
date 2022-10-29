@@ -116,3 +116,42 @@
 
 // const categories = document.querySelectorAll('.item > ul');
 // console.log(categories);
+
+//--------------------------------------//
+
+//import Movies from './js/Movies';
+
+/// потрібно реалізувати появу кнопки за умови наявності трейлера
+
+// const trailerMovie = new Movies({
+//   url: `https:api.themoviedb.org/3/movie/${movieId}/videos`,
+//   params: { api_key: '084c550b6f1767443109bcf4bcaee21b' },
+// });
+
+// const buttonTrailer = document.querySelector('.button-trailer');
+// console.log(buttonEl);
+// const modalBox = document.querySelector('.modal__box');
+
+// buttonTrailer.addEventListener('click', onModalTrailerMovie);
+// //+ отримуємо посилання на тег, який містить аргумент id фільму
+
+// // Окрема функція у функції Влада
+// /* function addButtonTrailer () {
+
+// }
+// */
+// // має прийті у функцію аргументом id фільма
+// async function onModalTrailerMovie(movieId) {
+//   //  const movieId =// або отримати з функції-запиту Влада
+
+//   try {
+//     const dataTrailerMovie = await trendingMovies.fetchMovies();
+//     const trailerMovie = dataMovie.results;
+//     trailerMovie.map(elem => {
+//       if (elem.hasOwnProperty('type') || elem.type === 'Trailer') {
+//       }
+//     });
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// }
