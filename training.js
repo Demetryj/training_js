@@ -155,3 +155,49 @@
 //     console.log(error.message);
 //   }
 // }
+
+// const arr1 = [1, 2, 2, 3, 4, 5, 6, 7, 9, 9, 20];
+// const arr2 = [1, 2, 3, 3, 5, 8, 9, 9, 21];
+
+// // const arr1 = [1, 2, 2, 2];
+// // const arr2 = [1, 1, 2, 2];
+
+// const compareItemsFn = (index1, index2) => {
+//   switch (true) {
+//     case arr1[index1] === arr2[index2]:
+//       return 0;
+
+//     case arr1[index1] < arr2[index2]:
+//       return -1;
+
+//     case arr1[index1] > arr2[index2]:
+//       return 1;
+
+//     default:
+//       return undefined;
+//   }
+// };
+
+// const length1 = arr1.length;
+// const length2 = arr2.length;
+
+// const result = intersectionIndexes(compareItemsFn, length1, length2);
+
+// function intersectionIndexes(compareItemsFn, length1, length2) {
+//   let arrOfIdx = [];
+//   let x = null;
+
+//   for (let i = 0; i < length1; i += 1) {
+//     for (let j = 0; j < length2; j += 1) {
+//       const idx = compareItemsFn(i, j);
+
+//       if (idx === 0 && x !== i) {
+//         arrOfIdx.push(i);
+//         x = i;
+//         continue;
+//       }
+//     }
+//   }
+//   return arrOfIdx;
+// }
+// console.log(result);
